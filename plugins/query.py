@@ -526,24 +526,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":                        
         buttons = [[
-                    InlineKeyboardButton("🎬 MAIN CHANNEL 🎬", url="https://t.me/+gqpU_4qsYAFmY2U1")
-                ],
-                [
-                    InlineKeyboardButton("📽️ MOVIE REQUEST GROUP 📽️", url="https://t.me/+EGBu5vb1vo9jMDE1")
-                ],
-                [
-                    InlineKeyboardButton("🎬 UHD MOVIES/SERIES 🎬", url="https://t.me/+abo3FyAP1hE5MTI9")
-                ],
-                [
-                    InlineKeyboardButton("😎 MORE FROM US 📢", callback_data = "morefromus")
-                ],
-                [
-                    InlineKeyboardButton("📽️ BACKUP CHANNEL 📽️", url="https://t.me/+b8RpV89fK11kMTY9")
-                ],
-                [
-                    InlineKeyboardButton("🔉 DISCUSSION 🔉", url="https://t.me/+YcSmRvCe9xs0YjU1"),
-                    InlineKeyboardButton("❔ HELP ❓", url="https://t.me/+YcSmRvCe9xs0YjU1")
-                ]]
+            InlineKeyboardButton("➕️ ADD ME TO YOUR GROUP ➕️", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+            ],[
+            InlineKeyboardButton("📢 REQUEST 📢",url=f'https://t.me/+XF9wyTIlo1QyMWJl')
+            ],[
+            InlineKeyboardButton('📢 CHANNEL 📢', url=f'https://t.me/+QYEOQkBhwowyYTNl')
+            ],[
+            InlineKeyboardButton("📢 SUPPORT 📢", url="https://t.me/+Dxbi80WQvPNmZDk9"),
+            InlineKeyboardButton("💫 ABOUT 💫", callback_data="about")
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.edit_message_media(
             InputMediaPhoto(random.choice(PICS), START_MESSAGE.format(user=query.from_user.mention, bot=temp.B_LINK), enums.ParseMode.HTML),
